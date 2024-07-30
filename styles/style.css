@@ -216,12 +216,12 @@ form {
 .signupContainer {
   position: relative;
   z-index: 1;
-  background-color: whitesmoke;
+  background-image: linear-gradient(to bottom, #0068ff, #0099ff, #0099ff, #44aef5);
   width: 320px;
   height: 520px;
   border-radius: 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 40px;
@@ -229,6 +229,7 @@ form {
   overflow: hidden;
 }
 .signupContainer .waveHeader {
+  top: 0;
   margin-left: 300px;
   position: absolute;
   display: flex;
@@ -237,17 +238,41 @@ form {
 .signupContainer .waveHeader h1 {
   position: absolute;
   z-index: 3;
-  margin-left: 170px;
+  margin-left: 100px;
   margin-top: 20px;
   font-size: 20px;
 }
 .signupContainer .waveHeader img {
   width: 900px;
+  margin-left: -150px;
 }
 .signupContainer .detailsContainer {
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 4;
+  width: 100%;
+}
+.signupContainer .detailsContainer img {
+  width: 900px;
+  margin-left: 550px;
+  margin-top: -270px;
+  position: absolute;
+  z-index: 5;
+}
+.signupContainer .detailsContainer .details {
+  position: absolute;
+  z-index: 7;
+}
+.signupContainer .detailsContainer .confirmSignup {
+  position: absolute;
+  z-index: 7;
+}
+.signupContainer .detailsContainer .signinAccountContainer {
+  position: absolute;
+  z-index: 7;
 }
 
 @media screen and (max-width: 320px) {

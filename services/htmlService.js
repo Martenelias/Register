@@ -96,18 +96,30 @@ const generateSignup = () => {
       <div class="signupContainer">
         <div class="waveHeader">
           <h1>Create Your<br> Account</h1>
-          <img src="waveUp.svg" alt="waveUp">
+          <img src="waveUpTrans.svg" alt="waveUp">
         </div>
-        <div class"detailsContainer">
-          <img src="waveTwo.svg" alt="waveTwo">
+        <div class="detailsContainer">
+          <img src="waveDownTrans.svg" alt="waveTwo">
           <div class="details">
-            <input type="text" class="signupName" placeholder="Full Name">
-            <input type="text" class="signupUsername" placeholder="Username">
-            <input type="text" class="signupPassword" placeholder="Password">
-            <input type="text" class="signupConPasw" placeholder="Confirm Password">
+            <div class="detailsInfo">
+              <input type="text" class="signupName" placeholder="Full Name">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <div class="detailsInfo">
+              <input type="text" class="signupUsername" placeholder="Username">
+              <i class="fa-solid fa-gear"></i>
+            </div>
+            <div class="detailsInfo">
+              <input type="text" class="signupEmail" placeholder="Email">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="detailsInfo">
+              <input type="text" class="signupConPasw" placeholder="Confirm Password">
+              <i class="fa-solid fa-lock"></i>
+            </div>
           </div>
           <a class="confirmSignup" href="/members">Sign up</a>
-          <div>
+          <div class="signinAccountContainer">
             <p>Already have account?</p>
             <a href="/signin">Sign in</a>
           </div>
