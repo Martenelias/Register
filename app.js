@@ -15,6 +15,16 @@ app.get('/', (req, res) => {
   res.send(html);
 });
 
+app.get('/signin', (req, res) => {
+  const html = htmlService.generateSignin();
+  res.send(html);
+});
+
+app.get('/signup', (req, res) => {
+  const html = htmlService.generateSignup();
+  res.send(html);
+});
+
 app.listen(port, () => {
   console.log('Server is running!');
 });

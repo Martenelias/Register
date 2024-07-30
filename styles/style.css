@@ -7,6 +7,7 @@ body {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
+  overflow: hidden;
 }
 
 form {
@@ -51,15 +52,28 @@ form {
   gap: 20px;
 }
 .welcomeContainer .signin-signup .signinBtn {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: whitesmoke;
-  border: none;
+  border: 2px solid whitesmoke;
   border-radius: 30px;
   color: #181818;
   font-size: 20px;
   width: 220px;
   height: 40px;
 }
+.welcomeContainer .signin-signup .signinBtn:hover {
+  cursor: pointer;
+  background-color: transparent;
+  color: whitesmoke;
+}
 .welcomeContainer .signin-signup .signupBtn {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: transparent;
   color: whitesmoke;
   font-size: 20px;
@@ -68,58 +82,84 @@ form {
   width: 220px;
   height: 40px;
 }
+.welcomeContainer .signin-signup .signupBtn:hover {
+  cursor: pointer;
+  background-color: whitesmoke;
+  color: #181818;
+}
+
+.signinContainer {
+  background-color: whitesmoke;
+  width: 320px;
+  height: 520px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+  color: whitesmoke;
+  overflow: hidden;
+}
+.signinContainer .wavesUp {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.signinContainer .wavesUp img {
+  position: relative;
+  z-index: 1;
+  margin-top: 0;
+  margin-left: 200px;
+  width: 900px;
+}
+.signinContainer .wavesUp h1 {
+  position: absolute;
+  z-index: 2;
+  margin-top: -70px;
+  margin-left: 430px;
+  font-size: 20px;
+}
+.signinContainer .wavesDown {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}
+.signinContainer .wavesDown img {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 0;
+  margin-left: 200px;
+  width: 900px;
+}
+.signinContainer .wavesDown .signupAccountContainer {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 5px;
+  margin-bottom: -110px;
+  font-size: 12px;
+}
+.signinContainer .wavesDown .signupAccountContainer .dontAccount {
+  margin-right: 410px;
+}
+.signinContainer .wavesDown .signupAccountContainer a {
+  margin-top: -15px;
+  margin-left: 70px;
+  color: whitesmoke;
+}
+.signinContainer .wavesDown .signupAccountContainer a:hover {
+  cursor: pointer;
+  color: #181818;
+}
 
 @media screen and (max-width: 320px) {
   .welcomeContainer {
-    position: relative;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    gap: 40px;
-    color: whitesmoke;
-    background-image: linear-gradient(to bottom, #0e91f1, #00a4ff, #5fbbff);
     width: 100vw;
     height: 100vh;
-  }
-  .welcomeContainer h1 {
-    margin: 0;
-    padding-top: 40px;
-    font-size: 24px;
-  }
-  .welcomeContainer .logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  .welcomeContainer .logo img {
-    color: whitesmoke;
-  }
-  .welcomeContainer .logo p {
-    color: #24dbc9;
-  }
-  .welcomeContainer .signin-signup {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  .welcomeContainer .signin-signup .signinBtn {
-    background-color: whitesmoke;
-    border: none;
-    border-radius: 30px;
-    color: #181818;
-    font-size: 20px;
-    width: 220px;
-    height: 40px;
-  }
-  .welcomeContainer .signin-signup .signupBtn {
-    background-color: transparent;
-    color: whitesmoke;
-    font-size: 20px;
-    border: 2px solid whitesmoke;
-    border-radius: 30px;
-    width: 220px;
-    height: 40px;
+    border-radius: 0;
   }
 }/*# sourceMappingURL=style.css.map */

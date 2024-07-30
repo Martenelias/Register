@@ -5,6 +5,7 @@ const generateHtmlHeader = () => {
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type="text/css" href="/style.css">
     <title>Register Page</title>
   </head>
@@ -31,8 +32,8 @@ const generateHtmlResponse = () => {
           <p>Building the Future of Web</p>
         </div>
         <div class="signin-signup">
-          <button class="signinBtn" type="button">Sign in</button>
-          <button class="signupBtn" type="button">Sign up</button>
+          <a class="signinBtn" href="/signin">Sign in</a>
+          <a class="signupBtn" href="/signup">Sign up</a>
         </div>
       </div>
     </form>
@@ -44,8 +45,65 @@ const generateHtmlResponse = () => {
   return html;
 };
 
+const generateSignin = () => {
+  const htmlHeader = generateHtmlHeader();
+  const htmlFooter = generateHtmlFooter();
+
+  const htmlContent = `
+  <form>
+      <div class="signinContainer">
+        <div class="wavesUp">
+          <img src="waveUp.svg" alt="svgUp">
+          <h1>Hello,<br> Sign in!</h1>
+        </div>
+        <div class="signin">
+        <div class="usernameContainer">
+          <input type="text" class="signinUsername" placeholder="Username">
+          <i class="fa-solid fa-user"></i>
+        </div>        
+        <div class="passwordContainer">
+          <input type="text" class="signinPassword" placeholder="Password">
+          <i class="fa-solid fa-lock"></i>
+        </div>
+        <a class="signinConfirmBtn" href="/members">Sign in</a>
+        <div class="wavesDown"> 
+          <img src="waveDown.svg" alt="svgDown">
+          <div class="signupAccountContainer">
+            <p class="dontAccount">Don't have account?</p>
+            <a class="signupAccount" href="/signup">Sign up</a>
+          </div>
+        </div>  
+        </div>
+      </div>
+    </form>
+  `;
+
+  const html = `
+    ${htmlHeader}
+    ${htmlContent}
+    ${htmlFooter}`;
+  return html;
+};
+
+const generateSignup = () => {
+  const htmlHeader = generateHtmlHeader();
+  const htmlFooter = generateHtmlFooter();
+
+  const htmlContent = `
+
+  `;
+
+  const html = `
+    ${htmlHeader}
+    ${htmlContent}
+    ${htmlFooter}`;
+  return html;
+};
+
 module.exports = {
   generateHtmlHeader,
   generateHtmlFooter,
   generateHtmlResponse,
+  generateSignin,
+  generateSignup,
 };
