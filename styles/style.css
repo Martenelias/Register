@@ -18,6 +18,7 @@ form {
 }
 
 .welcomeContainer {
+  position: relative;
   border-radius: 20px;
   display: flex;
   justify-content: flex-start;
@@ -28,6 +29,7 @@ form {
   background-image: linear-gradient(to bottom, #0e91f1, #00a4ff, #5fbbff);
   width: 320px;
   height: 520px;
+  overflow: hidden;
 }
 .welcomeContainer h1 {
   margin: 0;
@@ -87,8 +89,20 @@ form {
   background-color: whitesmoke;
   color: #181818;
 }
+.welcomeContainer .firstWave {
+  width: 700px;
+  position: absolute;
+  bottom: 0;
+}
+.welcomeContainer .secondWave {
+  width: 700px;
+  margin-left: -120px;
+  position: absolute;
+  bottom: 0;
+}
 
 .signinContainer {
+  position: relative;
   background-color: whitesmoke;
   width: 320px;
   height: 520px;
@@ -156,9 +170,93 @@ form {
   cursor: pointer;
   color: #181818;
 }
+.signinContainer .signin {
+  position: absolute;
+  width: 250px;
+  height: 520px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 25px;
+}
+.signinContainer .signin .usernameContainer {
+  border-bottom: 2px solid #aab0b3;
+}
+.signinContainer .signin .usernameContainer .signinUsername {
+  border: none;
+  background-color: transparent;
+}
+.signinContainer .signin .usernameContainer .fa-user {
+  color: #aab0b3;
+}
+.signinContainer .signin .passwordContainer {
+  border-bottom: 2px solid #aab0b3;
+}
+.signinContainer .signin .passwordContainer .signinPassword {
+  border: none;
+  background-color: transparent;
+}
+.signinContainer .signin .passwordContainer .fa-lock {
+  color: #aab0b3;
+}
+.signinContainer .signin .signinConfirmBtn {
+  background-image: linear-gradient(to right, #0e91f1, #00a4ff, #5fbbff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: whitesmoke;
+  width: 95px;
+  height: 35px;
+  border-radius: 20px;
+  margin-left: -100px;
+}
+
+.signupContainer {
+  position: relative;
+  z-index: 1;
+  background-color: whitesmoke;
+  width: 320px;
+  height: 520px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+  color: whitesmoke;
+  overflow: hidden;
+}
+.signupContainer .waveHeader {
+  margin-left: 300px;
+  position: absolute;
+  display: flex;
+  z-index: 2;
+}
+.signupContainer .waveHeader h1 {
+  position: absolute;
+  z-index: 3;
+  margin-left: 170px;
+  margin-top: 20px;
+  font-size: 20px;
+}
+.signupContainer .waveHeader img {
+  width: 900px;
+}
+.signupContainer .detailsContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
 
 @media screen and (max-width: 320px) {
   .welcomeContainer {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+  }
+  .signinContainer {
     width: 100vw;
     height: 100vh;
     border-radius: 0;

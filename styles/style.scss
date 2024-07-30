@@ -28,6 +28,7 @@ form {
 }
 
 .welcomeContainer {
+  position: relative;
   border-radius: 20px;
   display: flex;
   justify-content: flex-start;
@@ -38,6 +39,7 @@ form {
   background-image: linear-gradient(to bottom, #0e91f1, #00a4ff, #5fbbff);
   width: 320px;
   height: 520px;
+  overflow: hidden;
   h1 {
     margin: 0;
     padding-top: 40px;
@@ -90,9 +92,21 @@ form {
       }
     }
   }
+  .firstWave {
+    width: 700px;
+    position: absolute;
+    bottom: 0;
+  }
+  .secondWave {
+    width: 700px;
+    margin-left: -120px;
+    position: absolute;
+    bottom: 0;
+  }
 }
 
 .signinContainer {
+  position: relative;
   background-color: whitesmoke;
   width: 320px;
   height: 520px;
@@ -162,10 +176,90 @@ form {
 
     }
   }
+  .signin {
+    position: absolute;
+    width: 250px;
+    height: 520px;
+    @include flex();
+    flex-direction: column;
+    gap: 25px;
+    .usernameContainer {
+      border-bottom: 2px solid #aab0b3;
+      .signinUsername {
+        border: none;
+        background-color: transparent;
+      }
+      .fa-user {
+        color: #aab0b3;
+      }
+    }
+    .passwordContainer {
+      border-bottom: 2px solid #aab0b3;
+      .signinPassword {
+        border: none;
+        background-color: transparent;
+      }
+      .fa-lock {
+        color: #aab0b3;
+      }
+    }
+    .signinConfirmBtn {
+      background-image: linear-gradient(to right, #0e91f1, #00a4ff, #5fbbff);
+      @include flex();
+      text-decoration: none;
+      color: whitesmoke;
+      width: 95px;
+      height: 35px;
+      border-radius: 20px;
+      margin-left: -100px;
+    }
+  }
+}
+
+.signupContainer {
+  position: relative;
+  z-index: 1;
+  background-color: whitesmoke;
+  width: 320px;
+  height: 520px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+  color: whitesmoke;
+  overflow: hidden;
+  .waveHeader {
+    margin-left: 300px;
+    position: absolute;
+    display: flex;
+    z-index: 2;
+    h1 {
+      position: absolute;
+      z-index: 3;
+      margin-left: 170px;
+      margin-top: 20px;
+      font-size: 20px;
+    }
+    img {
+      width: 900px;
+    }
+  }
+  .detailsContainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
 }
 
 @media screen and (max-width:320px) {
   .welcomeContainer {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+  }
+  .signinContainer {
     width: 100vw;
     height: 100vh;
     border-radius: 0;

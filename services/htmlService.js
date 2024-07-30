@@ -35,6 +35,8 @@ const generateHtmlResponse = () => {
           <a class="signinBtn" href="/signin">Sign in</a>
           <a class="signupBtn" href="/signup">Sign up</a>
         </div>
+        <img class="firstWave" src="waveOne.svg" alt="firstWave">
+        <img class="secondWave" src="waveTwo.svg" alt="secondWave">
       </div>
     </form>
   `;
@@ -50,7 +52,7 @@ const generateSignin = () => {
   const htmlFooter = generateHtmlFooter();
 
   const htmlContent = `
-  <form>
+    <form>
       <div class="signinContainer">
         <div class="wavesUp">
           <img src="waveUp.svg" alt="svgUp">
@@ -90,7 +92,28 @@ const generateSignup = () => {
   const htmlFooter = generateHtmlFooter();
 
   const htmlContent = `
-
+    <form>
+      <div class="signupContainer">
+        <div class="waveHeader">
+          <h1>Create Your<br> Account</h1>
+          <img src="waveUp.svg" alt="waveUp">
+        </div>
+        <div class"detailsContainer">
+          <img src="waveTwo.svg" alt="waveTwo">
+          <div class="details">
+            <input type="text" class="signupName" placeholder="Full Name">
+            <input type="text" class="signupUsername" placeholder="Username">
+            <input type="text" class="signupPassword" placeholder="Password">
+            <input type="text" class="signupConPasw" placeholder="Confirm Password">
+          </div>
+          <a class="confirmSignup" href="/members">Sign up</a>
+          <div>
+            <p>Already have account?</p>
+            <a href="/signin">Sign in</a>
+          </div>
+        </div>
+      </div>
+    </form>
   `;
 
   const html = `
