@@ -57,22 +57,22 @@ const generateSignin = () => {
           <h1>Hello,<br> Sign in!</h1>
         </div>
         <div class="signin">
-        <div class="usernameContainer">
-          <input type="text" class="signinUsername" placeholder="Username">
-          <i class="fa-solid fa-user"></i>
-        </div>        
-        <div class="passwordContainer">
-          <input type="text" class="signinPassword" placeholder="Password">
-          <i class="fa-solid fa-lock"></i>
+          <div class="usernameContainer">
+            <input type="text" class="signinUsername" placeholder="Username">
+            <i class="fa-solid fa-user"></i>
+          </div>        
+          <div class="passwordContainer">
+            <input type="text" class="signinPassword" placeholder="Password">
+            <i class="fa-solid fa-lock"></i>
+          </div>
+          <a class="signinConfirmBtn" href="/members">Sign in</a>
         </div>
-        <a class="signinConfirmBtn" href="/members">Sign in</a>
         <div class="wavesDown"> 
           <img src="waveDown.svg" alt="svgDown">
           <div class="signupAccountContainer">
             <p class="dontAccount">Don't have account?</p>
             <a class="signupAccount" href="/signup">Sign up</a>
-          </div>
-        </div>  
+          </div>  
         </div>
       </div>
     </form>

@@ -108,27 +108,29 @@ form {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    position: relative;
     img {
       position: relative;
       z-index: 1;
       margin-top: 0;
       margin-left: 200px;
-      width: 900px;
+      width: 800px;
     }
     h1 {
       position: absolute;
       z-index: 2;
       margin-top: -70px;
-      margin-left: 430px;
+      margin-left: 370px;
       font-size: 20px;
 
     }
   }
+
   .wavesDown {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: 100%;
+    position: relative;
     img {
       position: relative;
       z-index: 1;
@@ -143,14 +145,14 @@ form {
       flex-direction: column;
       justify-content: flex-end;
       gap: 5px;
-      margin-bottom: -110px;
+      margin-bottom: -90px;
       font-size: 12px;
       .dontAccount {
         margin-right: 410px;
       }
       a {
         margin-top: -15px;
-        margin-left: 70px;
+        margin-left: 75px;
         color: whitesmoke;
         &:hover {
           cursor: pointer;
