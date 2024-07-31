@@ -139,7 +139,36 @@ const generateMembers = () => {
   const htmlFooter = generateHtmlFooter();
 
   const htmlContent = `
-    <h1>hey</h1>
+    <div class="outerBox">
+      <div class="membersContainer">
+        <div class="memberHeader">
+          <img src="memberUp.svg" alt="white">
+          <h1>Members</h1>
+        </div>
+        <div class="membersList">
+          <div class="memberDetail">
+            <p>1.</p>
+            <p>Juhan Liiv</p>
+          </div>
+          <div class="memberDetail">
+            <p>2.</p>
+            <p>Malle Maasikas</p>
+          </div>
+          <div class="memberDetail">
+            <p>3.</p>
+            <p>Karl Suuuuur</p>
+          </div>
+          <div class="memberDetail">
+            <p>4.</p>
+            <p>Juku Väikseke</p>
+          </div>
+        </div>
+        <div class="membersFooter">
+          <img src="memberDown.svg" alt="down">
+          <a href="/"><i class="fa-regular fa-circle-left"></i></a>
+        </div>
+      </div>
+    </div>
   `;
 
   const html = `
