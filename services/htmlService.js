@@ -148,19 +148,35 @@ const generateMembers = () => {
         <div class="membersList">
           <div class="memberDetail">
             <p>1.</p>
-            <p>Juhan Liiv</p>
+            <a href="/">Juhan Liiv</a>
           </div>
           <div class="memberDetail">
             <p>2.</p>
-            <p>Malle Maasikas</p>
+            <a href="/">Malle Maasikas</a>
           </div>
           <div class="memberDetail">
             <p>3.</p>
-            <p>Karl Suuuuur</p>
+            <a href="/">Karl Suuuuur</a>
           </div>
           <div class="memberDetail">
             <p>4.</p>
-            <p>Juku Väikseke</p>
+            <a href="/">Juku Väikseke</a>
+          </div>
+          <div class="memberDetail">
+            <p>4.</p>
+            <a href="/">Juku Väikseke</a>
+          </div>
+          <div class="memberDetail">
+            <p>4.</p>
+            <a href="/">Juku Väikseke</a>
+          </div>
+          <div class="memberDetail">
+            <p>4.</p>
+            <a href="/">Juku Väikseke</a>
+          </div>
+          <div class="memberDetail">
+            <p>4.</p>
+            <a href="/">Juku Väikseke</a>
           </div>
         </div>
         <div class="membersFooter">

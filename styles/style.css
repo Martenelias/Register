@@ -379,15 +379,26 @@ form {
   margin-left: -150px;
 }
 .outerBox .membersContainer .membersList {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   position: absolute;
   z-index: 5;
   width: 250px;
   height: 300px;
-  border: 1px solid black;
+  overflow: auto;
+}
+.outerBox .membersContainer .membersList .memberDetail {
+  color: #181818;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  padding: 3px 12px;
+  margin: 15px 2px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px #0068ff inset, 2px 2px 10px #0068ff;
+}
+.outerBox .membersContainer .membersList .memberDetail a {
+  text-decoration: none;
+  color: #181818;
 }
 .outerBox .membersContainer .membersFooter {
   display: flex;
