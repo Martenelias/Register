@@ -134,6 +134,34 @@ const generateSignup = () => {
     ${htmlFooter}`;
   return html;
 };
+const generateMembers = () => {
+  const htmlHeader = generateHtmlHeader();
+  const htmlFooter = generateHtmlFooter();
+
+  const htmlContent = `
+    <h1>hey</h1>
+  `;
+
+  const html = `
+    ${htmlHeader}
+    ${htmlContent}
+    ${htmlFooter}`;
+  return html;
+};
+const generateMembersDetail = () => {
+  const htmlHeader = generateHtmlHeader();
+  const htmlFooter = generateHtmlFooter();
+
+  const htmlContent = `
+    <h1>details</h1>
+  `;
+
+  const html = `
+    ${htmlHeader}
+    ${htmlContent}
+    ${htmlFooter}`;
+  return html;
+};
 
 module.exports = {
   generateHtmlHeader,
@@ -141,4 +169,6 @@ module.exports = {
   generateHtmlResponse,
   generateSignin,
   generateSignup,
+  generateMembers,
+  generateMembersDetail,
 };

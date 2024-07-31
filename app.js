@@ -24,6 +24,14 @@ app.get('/signup', (req, res) => {
   const html = htmlService.generateSignup();
   res.send(html);
 });
+app.get('/members', (req, res) => {
+  const html = htmlService.generateMembers();
+  res.send(html);
+});
+app.get('/members/:id', (req, res) => {
+  const html = htmlService.generateMembersDetail();
+  res.send(html);
+});
 
 app.listen(port, () => {
   console.log('Server is running!');
