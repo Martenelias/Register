@@ -4,7 +4,7 @@ const htmlService = require('./services/htmlService');
 
 const port = 3000;
 const app = express();
-const publicPath = path.join(__dirname, 'styles');
+const publicPath = path.join(__dirname, 'public');
 
 app.use(express.static(publicPath));
 app.use(express.json());

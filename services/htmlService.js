@@ -110,11 +110,11 @@ const generateSignup = () => {
               <i class="fa-solid fa-gear"></i>
             </div>
             <div class="detailsInfo">
-              <input type="text" class="signupBox" placeholder="Email">
+              <input type="email" class="signupBox" placeholder="Email">
               <i class="fa-solid fa-envelope"></i>
             </div>
             <div class="detailsInfo">
-              <input type="text" class="signupBox" placeholder="Password">
+              <input type="password" class="signupBox" placeholder="Password">
               <i class="fa-solid fa-lock"></i>
             </div>
           </div>
@@ -142,8 +142,11 @@ const generateMembers = () => {
     <div class="outerBox">
       <div class="membersContainer">
         <div class="memberHeader">
-          <img src="memberUp.svg" alt="white">
-          <h1>Members</h1>
+          <img class="memberUp" src="memberUp.svg" alt="white">
+          <div class="membersLogo">
+            <h1>Members</h1>
+            <img src="MyLogo.png" alt="my logo">
+          </div>
         </div>
         <div class="membersList">
           <div class="memberDetail">
