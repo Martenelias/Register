@@ -181,6 +181,10 @@ form {
   gap: 25px;
 }
 .signinContainer .signin .usernameContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  width: 250px;
   border-bottom: 2px solid #aab0b3;
 }
 .signinContainer .signin .usernameContainer .signinUsername {
@@ -191,6 +195,10 @@ form {
   color: #aab0b3;
 }
 .signinContainer .signin .passwordContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  width: 250px;
   border-bottom: 2px solid #aab0b3;
 }
 .signinContainer .signin .passwordContainer .signinPassword {
@@ -207,10 +215,11 @@ form {
   align-items: center;
   text-decoration: none;
   color: whitesmoke;
-  width: 95px;
-  height: 35px;
+  width: 100px;
+  height: 30px;
+  font-size: 16px;
   border-radius: 20px;
-  margin-left: -100px;
+  margin-left: -160px;
 }
 
 .signupContainer {
@@ -265,14 +274,69 @@ form {
 .signupContainer .detailsContainer .details {
   position: absolute;
   z-index: 7;
+  gap: 30px;
+  margin-top: -90px;
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+}
+.signupContainer .detailsContainer .details .detailsInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  color: whitesmoke;
+  border-bottom: 2px solid whitesmoke;
+}
+.signupContainer .detailsContainer .details .detailsInfo .signupBox {
+  border: none;
+  background-color: transparent;
+}
+.signupContainer .detailsContainer .details .detailsInfo .signupBox::-moz-placeholder {
+  color: whitesmoke;
+}
+.signupContainer .detailsContainer .details .detailsInfo .signupBox::placeholder {
+  color: whitesmoke;
 }
 .signupContainer .detailsContainer .confirmSignup {
   position: absolute;
   z-index: 7;
+  margin-top: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -150px;
+  background-color: transparent;
+  border: 2px solid whitesmoke;
+  border-radius: 20px;
+  width: 100px;
+  height: 30px;
+  font-size: 16px;
+  text-decoration: none;
+  color: whitesmoke;
 }
-.signupContainer .detailsContainer .signinAccountContainer {
+.signupContainer .detailsContainer .confirmSignup:hover {
+  cursor: pointer;
+  background-color: whitesmoke;
+  color: #181818;
+}
+.signupContainer .detailsContainer .signupAccountContainer {
   position: absolute;
   z-index: 7;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+  margin-top: 190px;
+  width: 270px;
+  font-size: 12px;
+}
+.signupContainer .detailsContainer .signupAccountContainer a {
+  color: whitesmoke;
+  margin-top: -10px;
+}
+.signupContainer .detailsContainer .signupAccountContainer a:hover {
+  color: #181818;
 }
 
 @media screen and (max-width: 320px) {

@@ -102,24 +102,24 @@ const generateSignup = () => {
           <img src="waveDownTrans.svg" alt="waveTwo">
           <div class="details">
             <div class="detailsInfo">
-              <input type="text" class="signupName" placeholder="Full Name">
+              <input type="text" class="signupBox" placeholder="Full Name">
               <i class="fa-solid fa-user"></i>
             </div>
             <div class="detailsInfo">
-              <input type="text" class="signupUsername" placeholder="Username">
+              <input type="text" class="signupBox" placeholder="Username">
               <i class="fa-solid fa-gear"></i>
             </div>
             <div class="detailsInfo">
-              <input type="text" class="signupEmail" placeholder="Email">
+              <input type="text" class="signupBox" placeholder="Email">
               <i class="fa-solid fa-envelope"></i>
             </div>
             <div class="detailsInfo">
-              <input type="text" class="signupConPasw" placeholder="Confirm Password">
+              <input type="text" class="signupBox" placeholder="Password">
               <i class="fa-solid fa-lock"></i>
             </div>
           </div>
           <a class="confirmSignup" href="/members">Sign up</a>
-          <div class="signinAccountContainer">
+          <div class="signupAccountContainer">
             <p>Already have account?</p>
             <a href="/signin">Sign in</a>
           </div>
