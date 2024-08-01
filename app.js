@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const htmlService = require('./services/htmlService');
+const registerRouter = require('./services/register');
 
 const port = 3000;
 const app = express();
@@ -32,6 +33,15 @@ app.get('/members/:id', (req, res) => {
   const html = htmlService.generateMembersDetail();
   res.send(html);
 });
+app.get('/test', (req, res) => {
+  const html = htmlService.generateEmpty();
+  res.send(html);
+});
+app.get('/register', (req, res) => {
+  const html = htmlService.generateRegister();
+  res.send(html);
+});
+app.use('/register', registerRouter);
 
 app.listen(port, () => {
   console.log('Server is running!');

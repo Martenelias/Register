@@ -196,12 +196,41 @@ const generateMembers = () => {
     ${htmlFooter}`;
   return html;
 };
+
 const generateMembersDetail = () => {
   const htmlHeader = generateHtmlHeader();
   const htmlFooter = generateHtmlFooter();
 
   const htmlContent = `
     <h1>details</h1>
+  `;
+
+  const html = `
+    ${htmlHeader}
+    ${htmlContent}
+    ${htmlFooter}`;
+  return html;
+};
+const generateEmpty = () => {
+  const htmlHeader = generateHtmlHeader();
+  const htmlFooter = generateHtmlFooter();
+
+  const htmlContent = `
+    <h1>Empty</h1>
+  `;
+
+  const html = `
+    ${htmlHeader}
+    ${htmlContent}
+    ${htmlFooter}`;
+  return html;
+};
+const generateRegister = () => {
+  const htmlHeader = generateHtmlHeader();
+  const htmlFooter = generateHtmlFooter();
+
+  const htmlContent = `
+    <h1>Register</h1>
   `;
 
   const html = `
@@ -219,4 +248,6 @@ module.exports = {
   generateSignup,
   generateMembers,
   generateMembersDetail,
+  generateEmpty,
+  generateRegister,
 };
