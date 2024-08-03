@@ -2,10 +2,13 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
+const cookieParser = require('cookie-parser');
 const htmlService = require('./services/htmlService');
-const registerRouter = require('./services/register');
-const authRouter = require('./services/auth');
+const registerRouter = require('./routes/register');
+const authRouter = require('./routes/auth');
 const connectDB = require('./services/dbConn');
+const refresh = require('./routes/refresh');
+const logout = require('./routes/logout');
 
 connectDB();
 
@@ -16,6 +19,8 @@ const publicPath = path.join(__dirname, 'public');
 app.use(express.static(publicPath));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.use(cookieParser());
 
 app.get('/', (req, res) => {
   const html = htmlService.generateHtmlResponse();
@@ -50,6 +55,8 @@ app.get('/register', (req, res) => {
 
 app.use('/register', registerRouter);
 app.use('/auth', authRouter);
+app.use('/refresh', refresh);
+app.use('/logout', logout);
 
 mongoose.connection.once('open', () => {
   console.log('Connected to mongoDB');

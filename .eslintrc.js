@@ -3,6 +3,7 @@ module.exports = {
     browser: true,
     commonjs: true,
     es2021: true,
+    node: true,
   },
   extends: 'airbnb-base',
   overrides: [
@@ -25,5 +26,6 @@ module.exports = {
     'no-console': 'off',
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'global-require': 'off',
+    'consistent-return': 'off',
   },
 };
