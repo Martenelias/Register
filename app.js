@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const htmlService = require('./services/htmlService');
 const registerRouter = require('./services/register');
+const authRouter = require('./services/auth');
 
 const port = 3000;
 const app = express();
@@ -42,6 +43,7 @@ app.get('/register', (req, res) => {
   res.send(html);
 });
 app.use('/register', registerRouter);
+app.use('/auth', authRouter);
 
 app.listen(port, () => {
   console.log('Server is running!');
