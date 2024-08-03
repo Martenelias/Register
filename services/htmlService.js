@@ -184,7 +184,7 @@ const generateMembers = () => {
         </div>
         <div class="membersFooter">
           <img src="memberDown.svg" alt="down">
-          <a href="/"><i class="fa-regular fa-circle-left"></i></a>
+          <a href="/"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
         </div>
       </div>
     </div>

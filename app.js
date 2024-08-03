@@ -1,9 +1,13 @@
 require('dotenv').config();
 const express = require('express');
+const mongoose = require('mongoose');
 const path = require('path');
 const htmlService = require('./services/htmlService');
 const registerRouter = require('./services/register');
 const authRouter = require('./services/auth');
+const connectDB = require('./services/dbConn');
+
+connectDB();
 
 const port = 3000;
 const app = express();
@@ -43,9 +47,13 @@ app.get('/register', (req, res) => {
   const html = htmlService.generateRegister();
   res.send(html);
 });
+
 app.use('/register', registerRouter);
 app.use('/auth', authRouter);
 
-app.listen(port, () => {
-  console.log('Server is running!');
+mongoose.connection.once('open', () => {
+  console.log('Connected to mongoDB');
+  app.listen(port, () => {
+    console.log('Server is running!');
+  });
 });
