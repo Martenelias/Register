@@ -20,7 +20,9 @@ const handleLogout = async (req, res) => {
   }
 
   // Delete refreshToken in db
-  const otherUsers = usersDB.users.filter((person) => person.refreshToken !== foundUser.refreshToken);
+  const otherUsers = usersDB.users.filter(
+    (person) => person.refreshToken !== foundUser.refreshToken,
+  );
   const currentUser = { ...foundUser, refreshToken: '' };
   usersDB.setUsers([...otherUsers, currentUser]);
   await fsPromises.writeFile(

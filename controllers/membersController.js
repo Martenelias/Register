@@ -1,6 +1,6 @@
 const data = {
   members: require('../model/members.json'),
-  setmembers(data) { this.members = data; },
+  setMembers(newData) { this.members = newData; },
 };
 
 const getAllMembers = (req, res) => {
@@ -23,30 +23,30 @@ const createNewMember = (req, res) => {
 };
 
 const updateMember = (req, res) => {
-  const member = data.members.find((emp) => emp.id === parseInt(req.body.id));
+  const member = data.members.find((emp) => emp.id === parseInt(req.body.id, 10));
   if (!member) {
     return res.status(400).json({ message: `member ID ${req.body.id} not found` });
   }
   if (req.body.firstname) member.firstname = req.body.firstname;
   if (req.body.lastname) member.lastname = req.body.lastname;
-  const filteredArray = data.members.filter((emp) => emp.id !== parseInt(req.body.id));
+  const filteredArray = data.members.filter((emp) => emp.id !== parseInt(req.body.id, 10));
   const unsortedArray = [...filteredArray, member];
-  data.setMembers(unsortedArray.sort((a, b) => (a.id > b.id ? 1 : a.id < b.id ? -1 : 0)));
+  unsortedArray.sort((a, b) => (a.id > b.id ? 1 : -1));
   res.json(data.members);
 };
 
 const deleteMember = (req, res) => {
-  const member = data.members.find((emp) => emp.id === parseInt(req.body.id));
+  const member = data.members.find((emp) => emp.id === parseInt(req.body.id, 10));
   if (!member) {
     return res.status(400).json({ message: `member ID ${req.body.id} not found` });
   }
-  const filteredArray = data.members.filter((emp) => emp.id !== parseInt(req.body.id));
+  const filteredArray = data.members.filter((emp) => emp.id !== parseInt(req.body.id, 10));
   data.setMembers([...filteredArray]);
   res.json(data.members);
 };
 
 const getMember = (req, res) => {
-  const member = data.members.find((emp) => emp.id === parseInt(req.params.id));
+  const member = data.members.find((emp) => emp.id === parseInt(req.params.id, 10));
   if (!member) {
     return res.status(400).json({ message: `member ID ${req.params.id} not found` });
   }

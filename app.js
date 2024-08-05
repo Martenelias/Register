@@ -9,6 +9,7 @@ const authRouter = require('./routes/auth');
 const connectDB = require('./services/dbConn');
 const refresh = require('./routes/refresh');
 const logout = require('./routes/logout');
+const verifyJWT = require('./services/verifyJWT');
 
 connectDB();
 
@@ -19,7 +20,6 @@ const publicPath = path.join(__dirname, 'public');
 app.use(express.static(publicPath));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
 app.use(cookieParser());
 
 app.get('/', (req, res) => {
@@ -57,6 +57,7 @@ app.use('/register', registerRouter);
 app.use('/auth', authRouter);
 app.use('/refresh', refresh);
 app.use('/logout', logout);
+app.use(verifyJWT);
 
 mongoose.connection.once('open', () => {
   console.log('Connected to mongoDB');
