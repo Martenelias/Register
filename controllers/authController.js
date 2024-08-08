@@ -49,7 +49,8 @@ const handleLogin = async (req, res) => {
         httpOnly: true, sameSite: 'None', secure: true, maxAge: 24 * 60 * 60 * 1000,
       },
     );
-    return res.json({ accessToken });
+
+    return res.json({ accessToken, redirectUrl: '/members' });
   }
   return res.sendStatus(401);
 };
