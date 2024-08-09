@@ -21,6 +21,10 @@ Welcome to the User Registration and Sign-In Application! This project is a mobi
 - ***Member List:*** Displays a list of registered members with unique IDs and profile images. 
 - ***Member Details:*** Shows detailed information for each member.
 
+## TODO 
+- Add MongoDB database to this project
+- Add user power: admin, regular user etc... 
+
 ## Installation and Usage
 
 - Clone
