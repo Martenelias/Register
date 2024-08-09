@@ -12,6 +12,7 @@ const usersDB = {
 
 const handleLogin = async (req, res) => {
   const { user, pwd } = req.body;
+  console.log(req.body, 'auth');
   if (!user || !pwd) {
     return res.status(400).json({ message: 'Username and password are required.' });
   }
@@ -42,9 +43,15 @@ const handleLogin = async (req, res) => {
       path.join(__dirname, '..', 'model', 'users.json'),
       JSON.stringify(usersDB.users),
     );
-    res.cookie('jwt', refreshToken, { httpOnly: true, sameSite: 'None', secure: true, maxAge: 24 * 60 * 60 * 1000,
-    });
-    return res.json({ accessToken });
+    res.cookie(
+      'jwt',
+      refreshToken,
+      {
+        httpOnly: true, sameSite: 'None', secure: true, maxAge: 24 * 60 * 60 * 1000,
+      },
+    );
+
+    return res.json({ accessToken, redirectUrl: '/members' });
   }
   return res.sendStatus(401);
 };

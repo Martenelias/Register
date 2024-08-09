@@ -27,6 +27,11 @@ form {
 
 }
 
+.outerBox {
+  @include flex();
+  height: 100vh;
+}
+
 .welcomeContainer {
   position: relative;
   border-radius: 20px;
@@ -219,8 +224,10 @@ form {
       width: 100px;
       height: 30px;
       font-size: 16px;
+      border: none;
       border-radius: 20px;
       margin-left: -160px;
+      cursor: pointer;
     }
   }
 }
@@ -337,111 +344,188 @@ form {
   }
 }
 
-.outerBox {
+.membersContainer {
+  position: relative;
+  background-color: whitesmoke;
+  width: 320px;
+  height: 520px;
+  border-radius: 20px;
   @include flex();
-  height: 100vh;
-  .membersContainer {
+  flex-direction: column;
+  gap: 40px;
+  color: whitesmoke;
+  overflow: hidden;
+  .memberHeader {
+    margin-left: 300px;
     position: relative;
-    background-color: whitesmoke;
-    width: 320px;
-    height: 520px;
-    border-radius: 20px;
-    @include flex();
-    flex-direction: column;
-    gap: 40px;
-    color: whitesmoke;
-    overflow: hidden;
-    .memberHeader {
-      margin-left: 300px;
-      position: relative;
-      display: flex;
-      z-index: 1;
-      height: 100%;
-      width: 100%;
-      align-items: flex-start;
-      justify-content: center;
-      .memberUp {
-        position: absolute;
-        z-index: 2;
-        width: 600px;
-        margin-left: -300px;
-      }
-      .membersLogo {
-        position: absolute;
-        z-index: 3;
-        width: 250px;
-        margin-left: -300px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        h1 {
-          font-size: 24px;
-        }
-        img {
-          width: 40px;
-          height: 25px;
-        }
-      }
-    }
-    .membersList {
+    display: flex;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: center;
+    .memberUp {
       position: absolute;
-      z-index: 5;
+      z-index: 2;
+      width: 600px;
+      margin-left: -300px;
+    }
+    .membersLogo {
+      position: absolute;
+      z-index: 3;
       width: 250px;
-      height: 300px;
-      overflow: auto;
-      .memberDetail {
-        color: #181818;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 40px;
-        padding: 3px 12px;
-        margin: 15px 2px;
-        border-radius: 10px;
-        box-shadow: 2px 2px 10px #5fbbff inset,
-                    2px 2px 10px #5fbbff;
-        a {
-          text-decoration: none;
-          color: #181818;
-        }
+      margin-left: -300px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      h1 {
+        font-size: 24px;
+      }
+      img {
+        width: 40px;
+        height: 25px;
       }
     }
-    .membersFooter {
+  }
+  .membersList {
+    position: absolute;
+    z-index: 5;
+    width: 250px;
+    height: 290px;
+    overflow: auto;
+    .memberDetail {
+      color: #181818;
       display: flex;
-      align-items: flex-end;
-      justify-content: flex-end;
-      position: relative;
-      z-index: 1;
-      bottom: 0;
-      width: 100%;
-      height: 100%;
-      margin-left: 250px;
-      img {
-        position: absolute;
-        z-index: 2;
-        width: 700px;
+      justify-content: space-between;
+      align-items: center;
+      height: 40px;
+      padding: 3px 12px;
+      margin: 15px 2px;
+      border-bottom: 3px solid #5fbbff;
+      .memberListImage {
+        width: 30px;
+        height: 30px;
       }
       a {
-        position: absolute;
-        z-index: 3;
-        display: flex;
-        margin-bottom: 30px;
-        font-size: 30px;
         text-decoration: none;
+        color: #181818;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  .membersFooter {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    position: relative;
+    z-index: 1;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    margin-left: 250px;
+    img {
+      position: absolute;
+      z-index: 2;
+      width: 700px;
+    }
+    a {
+      position: absolute;
+      z-index: 3;
+      display: flex;
+      margin-bottom: 30px;
+      font-size: 30px;
+      text-decoration: none;
+      color: whitesmoke;
+      margin-right: 160px;
+    }
+  }
+}
+
+.userInfoContainer {
+  position: relative;
+  z-index: 1;
+  background-image: linear-gradient(to bottom, #0068ff,  #0099ff, #0099ff, #44aef5);
+  width: 320px;
+  height: 520px;
+  border-radius: 20px;
+  @include flex();
+  flex-direction: column;
+  gap: 40px;
+  color: whitesmoke;
+  overflow: hidden;
+  .waveHeader {
+    top: 0;
+    margin-left: 300px;
+    position: absolute;
+    display: flex;
+    z-index: 2;
+    .waveTrans {
+      width: 900px;
+      margin-left: -150px;
+    }
+  }
+  .userDetailsContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 4;
+    width: 100%;
+    .waveTransTwo {
+      width: 900px;
+      margin-left: 550px;
+      margin-top: -270px;
+      position: absolute;
+      z-index: 5;
+    }
+    .userDetails {
+      position: absolute;
+      z-index: 7;
+      gap: 30px;
+      margin-top: -200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 250px;
+      
+      .userImage {
+        width: 150px;
+        height: 150px;
+        border: 2px solid whitesmoke;
+        border-radius: 50%;
+      }
+    }
+    .backToMembersContainer {
+      position: absolute;
+      z-index: 7;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      flex-direction: column;
+      margin-top: 190px;
+      width: 250px;
+      font-size: 12px;
+      a {
         color: whitesmoke;
-        margin-right: 160px;
+        margin-top: -10px;
+        &:hover {
+          color: #181818;
+        }
       }
     }
   }
 }
 
 @media screen and (max-width:320px) {
-  .welcomeContainer {
-    width: 100vw;
-    height: 100vh;
-    border-radius: 0;
-  }
-  .signinContainer {
+  .welcomeContainer,
+  .signinContainer,
+  .signupContainer,
+  .membersContainer,
+  .userInfoContainer {
     width: 100vw;
     height: 100vh;
     border-radius: 0;

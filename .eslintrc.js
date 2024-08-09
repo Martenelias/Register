@@ -24,6 +24,7 @@ module.exports = {
   },
   rules: {
     'no-console': 'off',
+    'no-alert': 'off',
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'global-require': 'off',
     'consistent-return': 'off',

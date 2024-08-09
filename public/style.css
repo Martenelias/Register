@@ -17,6 +17,13 @@ form {
   height: 100vh;
 }
 
+.outerBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 .welcomeContainer {
   position: relative;
   border-radius: 20px;
@@ -218,8 +225,10 @@ form {
   width: 100px;
   height: 30px;
   font-size: 16px;
+  border: none;
   border-radius: 20px;
   margin-left: -160px;
+  cursor: pointer;
 }
 
 .signupContainer {
@@ -339,13 +348,7 @@ form {
   color: #181818;
 }
 
-.outerBox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-.outerBox .membersContainer {
+.membersContainer {
   position: relative;
   background-color: whitesmoke;
   width: 320px;
@@ -359,7 +362,7 @@ form {
   color: whitesmoke;
   overflow: hidden;
 }
-.outerBox .membersContainer .memberHeader {
+.membersContainer .memberHeader {
   margin-left: 300px;
   position: relative;
   display: flex;
@@ -369,13 +372,13 @@ form {
   align-items: flex-start;
   justify-content: center;
 }
-.outerBox .membersContainer .memberHeader .memberUp {
+.membersContainer .memberHeader .memberUp {
   position: absolute;
   z-index: 2;
   width: 600px;
   margin-left: -300px;
 }
-.outerBox .membersContainer .memberHeader .membersLogo {
+.membersContainer .memberHeader .membersLogo {
   position: absolute;
   z-index: 3;
   width: 250px;
@@ -384,21 +387,21 @@ form {
   justify-content: space-between;
   align-items: center;
 }
-.outerBox .membersContainer .memberHeader .membersLogo h1 {
+.membersContainer .memberHeader .membersLogo h1 {
   font-size: 24px;
 }
-.outerBox .membersContainer .memberHeader .membersLogo img {
+.membersContainer .memberHeader .membersLogo img {
   width: 40px;
   height: 25px;
 }
-.outerBox .membersContainer .membersList {
+.membersContainer .membersList {
   position: absolute;
   z-index: 5;
   width: 250px;
-  height: 300px;
+  height: 290px;
   overflow: auto;
 }
-.outerBox .membersContainer .membersList .memberDetail {
+.membersContainer .membersList .memberDetail {
   color: #181818;
   display: flex;
   justify-content: space-between;
@@ -406,14 +409,20 @@ form {
   height: 40px;
   padding: 3px 12px;
   margin: 15px 2px;
-  border-radius: 10px;
-  box-shadow: 2px 2px 10px #5fbbff inset, 2px 2px 10px #5fbbff;
+  border-bottom: 3px solid #5fbbff;
 }
-.outerBox .membersContainer .membersList .memberDetail a {
+.membersContainer .membersList .memberDetail .memberListImage {
+  width: 30px;
+  height: 30px;
+}
+.membersContainer .membersList .memberDetail a {
   text-decoration: none;
   color: #181818;
 }
-.outerBox .membersContainer .membersFooter {
+.membersContainer .membersList .memberDetail a:hover {
+  text-decoration: underline;
+}
+.membersContainer .membersFooter {
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
@@ -424,12 +433,12 @@ form {
   height: 100%;
   margin-left: 250px;
 }
-.outerBox .membersContainer .membersFooter img {
+.membersContainer .membersFooter img {
   position: absolute;
   z-index: 2;
   width: 700px;
 }
-.outerBox .membersContainer .membersFooter a {
+.membersContainer .membersFooter a {
   position: absolute;
   z-index: 3;
   display: flex;
@@ -440,13 +449,90 @@ form {
   margin-right: 160px;
 }
 
+.userInfoContainer {
+  position: relative;
+  z-index: 1;
+  background-image: linear-gradient(to bottom, #0068ff, #0099ff, #0099ff, #44aef5);
+  width: 320px;
+  height: 520px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+  color: whitesmoke;
+  overflow: hidden;
+}
+.userInfoContainer .waveHeader {
+  top: 0;
+  margin-left: 300px;
+  position: absolute;
+  display: flex;
+  z-index: 2;
+}
+.userInfoContainer .waveHeader .waveTrans {
+  width: 900px;
+  margin-left: -150px;
+}
+.userInfoContainer .userDetailsContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 4;
+  width: 100%;
+}
+.userInfoContainer .userDetailsContainer .waveTransTwo {
+  width: 900px;
+  margin-left: 550px;
+  margin-top: -270px;
+  position: absolute;
+  z-index: 5;
+}
+.userInfoContainer .userDetailsContainer .userDetails {
+  position: absolute;
+  z-index: 7;
+  gap: 30px;
+  margin-top: -200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 250px;
+}
+.userInfoContainer .userDetailsContainer .userDetails .userImage {
+  width: 150px;
+  height: 150px;
+  border: 2px solid whitesmoke;
+  border-radius: 50%;
+}
+.userInfoContainer .userDetailsContainer .backToMembersContainer {
+  position: absolute;
+  z-index: 7;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+  margin-top: 190px;
+  width: 250px;
+  font-size: 12px;
+}
+.userInfoContainer .userDetailsContainer .backToMembersContainer a {
+  color: whitesmoke;
+  margin-top: -10px;
+}
+.userInfoContainer .userDetailsContainer .backToMembersContainer a:hover {
+  color: #181818;
+}
+
 @media screen and (max-width: 320px) {
-  .welcomeContainer {
-    width: 100vw;
-    height: 100vh;
-    border-radius: 0;
-  }
-  .signinContainer {
+  .welcomeContainer,
+  .signinContainer,
+  .signupContainer,
+  .membersContainer,
+  .userInfoContainer {
     width: 100vw;
     height: 100vh;
     border-radius: 0;

@@ -1,3 +1,5 @@
+const path = require('path');
+
 const generateHtmlHeader = () => {
   const htmlHeader = `
   <!DOCTYPE html>
@@ -7,6 +9,7 @@ const generateHtmlHeader = () => {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type="text/css" href="/style.css">
+    <script src="/index.js" defer></script>
     <title>Register Page</title>
   </head>
   <body>`;
@@ -52,7 +55,7 @@ const generateSignin = () => {
   const htmlFooter = generateHtmlFooter();
 
   const htmlContent = `
-    <form>
+    <form id="signinForm" action="/members" method="POST">
       <div class="signinContainer">
         <div class="wavesUp">
           <img src="waveUp.svg" alt="svgUp">
@@ -60,14 +63,14 @@ const generateSignin = () => {
         </div>
         <div class="signin">
           <div class="usernameContainer">
-            <input type="text" class="signinUsername" placeholder="Username">
+            <input type="text" name="user" class="signinUsername" placeholder="Username">
             <i class="fa-solid fa-user"></i>
           </div>        
           <div class="passwordContainer">
-            <input type="text" class="signinPassword" placeholder="Password">
+            <input type="password" name="pwd" class="signinPassword" placeholder="Password">
             <i class="fa-solid fa-lock"></i>
           </div>
-          <a class="signinConfirmBtn" href="/members">Sign in</a>
+          <button type="submit" class="signinConfirmBtn">Sign in</button>
         </div>
         <div class="wavesDown"> 
           <img src="waveDown.svg" alt="svgDown">
@@ -92,33 +95,33 @@ const generateSignup = () => {
   const htmlFooter = generateHtmlFooter();
 
   const htmlContent = `
-    <form>
+    <form id="signupForm" action="/signup" method="POST">
       <div class="signupContainer">
         <div class="waveHeader">
           <h1>Create Your<br> Account</h1>
-          <img src="waveUpTrans.svg" alt="waveUp">
+          <img src="/img/waveUpTrans.svg" alt="waveUp">
         </div>
         <div class="detailsContainer">
-          <img src="waveDownTrans.svg" alt="waveTwo">
+          <img src="/img/waveDownTrans.svg" alt="waveTwo">
           <div class="details">
             <div class="detailsInfo">
-              <input type="text" class="signupBox" placeholder="Full Name">
+              <input type="text" name="name" class="signupBox" placeholder="Full Name">
               <i class="fa-solid fa-user"></i>
             </div>
             <div class="detailsInfo">
-              <input type="text" class="signupBox" placeholder="Username">
+              <input type="text" name="user" class="signupBox" placeholder="Username">
               <i class="fa-solid fa-gear"></i>
             </div>
             <div class="detailsInfo">
-              <input type="email" class="signupBox" placeholder="Email">
+              <input type="email" name="email" class="signupBox" placeholder="Email">
               <i class="fa-solid fa-envelope"></i>
             </div>
             <div class="detailsInfo">
-              <input type="password" class="signupBox" placeholder="Password">
+              <input type="password" name="pwd" class="signupBox" placeholder="Password">
               <i class="fa-solid fa-lock"></i>
             </div>
           </div>
-          <a class="confirmSignup" href="/members">Sign up</a>
+          <button type="submit" class="confirmSignup">Sign up</button>
           <div class="signupAccountContainer">
             <p>Already have account?</p>
             <a href="/signin">Sign in</a>
@@ -134,9 +137,45 @@ const generateSignup = () => {
     ${htmlFooter}`;
   return html;
 };
-const generateMembers = () => {
+
+const images = [
+  'bear.png',
+  'dog.png',
+  'fox.png',
+  'mouse.png',
+  'sheep.png',
+  'tiger.png',
+];
+
+const getImageForMember = (memberId) => {
+  const numericId = parseInt(memberId, 10);
+  if (Number.isNaN(numericId)) {
+    console.error(`Invalid member ID: ${memberId}`);
+    return 'default.png';
+  }
+  const imageIndex = numericId % images.length;
+  return images[imageIndex];
+};
+
+const generateMembers = (members) => {
   const htmlHeader = generateHtmlHeader();
   const htmlFooter = generateHtmlFooter();
+  let membersList = '';
+
+  members.forEach((member) => {
+    if (!member.id) {
+      console.error('Member ID is undefined', member);
+      return;
+    }
+    const memberImage = getImageForMember(member.id);
+    const imgPath = path.join('/img', memberImage);
+
+    membersList += `
+    <div class="memberDetail">
+      <img class="memberListImage" src="${imgPath}" alt="${member.name}">
+      <a href="/members/${member.id}">${member.name}</a>
+    </div>`;
+  });
 
   const htmlContent = `
     <div class="outerBox">
@@ -149,38 +188,7 @@ const generateMembers = () => {
           </div>
         </div>
         <div class="membersList">
-          <div class="memberDetail">
-            <p>1.</p>
-            <a href="/">Juhan Liiv</a>
-          </div>
-          <div class="memberDetail">
-            <p>2.</p>
-            <a href="/">Malle Maasikas</a>
-          </div>
-          <div class="memberDetail">
-            <p>3.</p>
-            <a href="/">Karl Suuuuur</a>
-          </div>
-          <div class="memberDetail">
-            <p>4.</p>
-            <a href="/">Juku Väikseke</a>
-          </div>
-          <div class="memberDetail">
-            <p>4.</p>
-            <a href="/">Juku Väikseke</a>
-          </div>
-          <div class="memberDetail">
-            <p>4.</p>
-            <a href="/">Juku Väikseke</a>
-          </div>
-          <div class="memberDetail">
-            <p>4.</p>
-            <a href="/">Juku Väikseke</a>
-          </div>
-          <div class="memberDetail">
-            <p>4.</p>
-            <a href="/">Juku Väikseke</a>
-          </div>
+        ${membersList}
         </div>
         <div class="membersFooter">
           <img src="memberDown.svg" alt="down">
@@ -197,40 +205,42 @@ const generateMembers = () => {
   return html;
 };
 
-const generateMembersDetail = () => {
+const generateMembersDetail = (member) => {
   const htmlHeader = generateHtmlHeader();
   const htmlFooter = generateHtmlFooter();
-
-  const htmlContent = `
-    <h1>details</h1>
-  `;
-
-  const html = `
+  if (!member) {
+    console.error('member undefined in detail');
+    return `
     ${htmlHeader}
-    ${htmlContent}
-    ${htmlFooter}`;
-  return html;
-};
-const generateEmpty = () => {
-  const htmlHeader = generateHtmlHeader();
-  const htmlFooter = generateHtmlFooter();
+    <p>Member not found</p>
+    ${htmlFooter}
+    `;
+  }
+  const memberImage = getImageForMember(member.id);
+  const imgPath = path.join('/img', memberImage);
 
   const htmlContent = `
-    <h1>Empty</h1>
-  `;
-
-  const html = `
-    ${htmlHeader}
-    ${htmlContent}
-    ${htmlFooter}`;
-  return html;
-};
-const generateRegister = () => {
-  const htmlHeader = generateHtmlHeader();
-  const htmlFooter = generateHtmlFooter();
-
-  const htmlContent = `
-    <h1>Register</h1>
+    <form>
+      <div class="userInfoContainer">
+        <div class="waveHeader">
+          <img class="waveTrans" src="/img/waveUpTrans.svg" alt="waveUp">
+        </div>
+        <div class="userDetailsContainer">
+          <img class="waveTransTwo" src="/img/waveDownTrans.svg" alt="waveTwo">
+          <div class="userDetails">
+            <img class="userImage" src="${imgPath}" alt="${member.name}">
+            <div class="usersInfo">
+              <h2 class="usersName">${member.name}</h2>
+              <p class="usersAcc">${member.username}</p>
+              <p class="usersEmail">${member.email}</p>
+            </div>
+          </div>
+          <div class="backToMembersContainer">
+            <a href="/members">Members</a>
+          </div>
+        </div>
+      </div>
+    </form>
   `;
 
   const html = `
@@ -248,6 +258,4 @@ module.exports = {
   generateSignup,
   generateMembers,
   generateMembersDetail,
-  generateEmpty,
-  generateRegister,
 };
