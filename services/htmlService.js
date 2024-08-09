@@ -1,3 +1,5 @@
+const path = require('path');
+
 const generateHtmlHeader = () => {
   const htmlHeader = `
   <!DOCTYPE html>
@@ -93,7 +95,7 @@ const generateSignup = () => {
   const htmlFooter = generateHtmlFooter();
 
   const htmlContent = `
-    <form id="signupForm" action="/members" method="POST">
+    <form id="signupForm" action="/signup" method="POST">
       <div class="signupContainer">
         <div class="waveHeader">
           <h1>Create Your<br> Account</h1>
@@ -135,15 +137,45 @@ const generateSignup = () => {
     ${htmlFooter}`;
   return html;
 };
+
+const images = [
+  'bear.png',
+  'dog.png',
+  'fox.png',
+  'mouse.png',
+  'sheep.png',
+  'tiger.png',
+];
+
+const getImageForMember = (memberId) => {
+  const numericId = parseInt(memberId, 10);
+  if (Number.isNaN(numericId)) {
+    console.error(`Invalid member ID: ${memberId}`);
+    return 'default.png';
+  }
+  const imageIndex = numericId % images.length;
+  return images[imageIndex];
+};
+
 const generateMembers = (members) => {
   const htmlHeader = generateHtmlHeader();
   const htmlFooter = generateHtmlFooter();
+  let membersList = '';
 
-  const membersList = members.map((member) => `
+  members.forEach((member) => {
+    if (!member.id) {
+      console.error('Member ID is undefined', member);
+      return;
+    }
+    const memberImage = getImageForMember(member.id);
+    const imgPath = path.join('/img', memberImage);
+
+    membersList += `
     <div class="memberDetail">
-      <img class="memberListImage" src="/img/bear.png" alt="bear">
-      <a href="#">${member.name}</a>
-    </div>`).join('');
+      <img class="memberListImage" src="${imgPath}" alt="${member.name}">
+      <a href="/members/${member.id}">${member.name}</a>
+    </div>`;
+  });
 
   const htmlContent = `
     <div class="outerBox">
@@ -173,9 +205,19 @@ const generateMembers = (members) => {
   return html;
 };
 
-const generateMembersDetail = () => {
+const generateMembersDetail = (member) => {
   const htmlHeader = generateHtmlHeader();
   const htmlFooter = generateHtmlFooter();
+  if (!member) {
+    console.error('member undefined in detail');
+    return `
+    ${htmlHeader}
+    <p>Member not found</p>
+    ${htmlFooter}
+    `;
+  }
+  const memberImage = getImageForMember(member.id);
+  const imgPath = path.join('/img', memberImage);
 
   const htmlContent = `
     <form>
@@ -186,11 +228,11 @@ const generateMembersDetail = () => {
         <div class="userDetailsContainer">
           <img class="waveTransTwo" src="/img/waveDownTrans.svg" alt="waveTwo">
           <div class="userDetails">
-            <img class="userImage" src="/img/bear.png" alt="bear image">
+            <img class="userImage" src="${imgPath}" alt="${member.name}">
             <div class="usersInfo">
-              <h2 class="usersName">Malle Maasikas</h2>
-              <p class="usersAcc">Mallekas</p>
-              <p class="usersEmail">malle@gmail.com</p>
+              <h2 class="usersName">${member.name}</h2>
+              <p class="usersAcc">${member.username}</p>
+              <p class="usersEmail">${member.email}</p>
             </div>
           </div>
           <div class="backToMembersContainer">

@@ -8,10 +8,16 @@ const usersDB = {
   setUsers(data) { this.users = data; },
 };
 
+const getNextId = () => {
+  const maxId = users.reduce((max, user) => (user.id > max ? user.id : max), 0);
+  return maxId + 1;
+};
+
 const handleNewUser = async (req, res) => {
   const {
     name, user, email, pwd,
   } = req.body;
+  console.log(req.body, 'reg');
   if (!name || !user || !email || !pwd) {
     return res.status(400).json({ message: 'All fields are required.' });
   }
@@ -26,9 +32,16 @@ const handleNewUser = async (req, res) => {
     // Encrypt password
     const hashedPwd = await bcrypt.hash(pwd, 10);
 
+    // Generate a unique ID for new users
+    const newId = getNextId(usersDB.users);
+
     // Store new user
     const newUser = {
-      name, username: user, email, password: hashedPwd,
+      id: newId,
+      name,
+      username: user,
+      email,
+      password: hashedPwd,
     };
     usersDB.setUsers([...usersDB.users, newUser]);
     await fsPromises.writeFile(

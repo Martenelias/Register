@@ -12,6 +12,7 @@ const usersDB = {
 
 const handleLogin = async (req, res) => {
   const { user, pwd } = req.body;
+  console.log(req.body, 'auth');
   if (!user || !pwd) {
     return res.status(400).json({ message: 'Username and password are required.' });
   }
