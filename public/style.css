@@ -17,6 +17,13 @@ form {
   height: 100vh;
 }
 
+.outerBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 .welcomeContainer {
   position: relative;
   border-radius: 20px;
@@ -341,13 +348,7 @@ form {
   color: #181818;
 }
 
-.outerBox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-.outerBox .membersContainer {
+.membersContainer {
   position: relative;
   background-color: whitesmoke;
   width: 320px;
@@ -361,7 +362,7 @@ form {
   color: whitesmoke;
   overflow: hidden;
 }
-.outerBox .membersContainer .memberHeader {
+.membersContainer .memberHeader {
   margin-left: 300px;
   position: relative;
   display: flex;
@@ -371,13 +372,13 @@ form {
   align-items: flex-start;
   justify-content: center;
 }
-.outerBox .membersContainer .memberHeader .memberUp {
+.membersContainer .memberHeader .memberUp {
   position: absolute;
   z-index: 2;
   width: 600px;
   margin-left: -300px;
 }
-.outerBox .membersContainer .memberHeader .membersLogo {
+.membersContainer .memberHeader .membersLogo {
   position: absolute;
   z-index: 3;
   width: 250px;
@@ -386,21 +387,21 @@ form {
   justify-content: space-between;
   align-items: center;
 }
-.outerBox .membersContainer .memberHeader .membersLogo h1 {
+.membersContainer .memberHeader .membersLogo h1 {
   font-size: 24px;
 }
-.outerBox .membersContainer .memberHeader .membersLogo img {
+.membersContainer .memberHeader .membersLogo img {
   width: 40px;
   height: 25px;
 }
-.outerBox .membersContainer .membersList {
+.membersContainer .membersList {
   position: absolute;
   z-index: 5;
   width: 250px;
   height: 290px;
   overflow: auto;
 }
-.outerBox .membersContainer .membersList .memberDetail {
+.membersContainer .membersList .memberDetail {
   color: #181818;
   display: flex;
   justify-content: space-between;
@@ -410,18 +411,18 @@ form {
   margin: 15px 2px;
   border-bottom: 3px solid #5fbbff;
 }
-.outerBox .membersContainer .membersList .memberDetail .memberListImage {
+.membersContainer .membersList .memberDetail .memberListImage {
   width: 30px;
   height: 30px;
 }
-.outerBox .membersContainer .membersList .memberDetail a {
+.membersContainer .membersList .memberDetail a {
   text-decoration: none;
   color: #181818;
 }
-.outerBox .membersContainer .membersList .memberDetail a:hover {
+.membersContainer .membersList .memberDetail a:hover {
   text-decoration: underline;
 }
-.outerBox .membersContainer .membersFooter {
+.membersContainer .membersFooter {
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
@@ -432,12 +433,12 @@ form {
   height: 100%;
   margin-left: 250px;
 }
-.outerBox .membersContainer .membersFooter img {
+.membersContainer .membersFooter img {
   position: absolute;
   z-index: 2;
   width: 700px;
 }
-.outerBox .membersContainer .membersFooter a {
+.membersContainer .membersFooter a {
   position: absolute;
   z-index: 3;
   display: flex;
@@ -527,12 +528,11 @@ form {
 }
 
 @media screen and (max-width: 320px) {
-  .welcomeContainer {
-    width: 100vw;
-    height: 100vh;
-    border-radius: 0;
-  }
-  .signinContainer {
+  .welcomeContainer,
+  .signinContainer,
+  .signupContainer,
+  .membersContainer,
+  .userInfoContainer {
     width: 100vw;
     height: 100vh;
     border-radius: 0;
