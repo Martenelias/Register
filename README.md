@@ -25,6 +25,17 @@ Welcome to the User Registration and Sign-In Application! This project is a mobi
 - Add MongoDB database to this project
 - Add user power: admin, regular user etc... 
 
+## json
+
+```json
+{
+  "email": "karl@kask.ee",
+  "password": "karl",
+  "firstName": "Karl",
+  "lastName": "Kask"
+}
+```
+
 ## Installation and Usage
 
 - Clone
