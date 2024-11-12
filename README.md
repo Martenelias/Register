@@ -2,7 +2,7 @@
 
 # User Registration and Sign-In Application 
 
-- Klooni repositoorium
+- **Klooni repositoorium**
 
 ```bash
 git clone https://github.com/yourusername/yourrepository.git
@@ -20,6 +20,35 @@ npm install
 
 ```bash
 npm start
+```
+
+| ID  | Name        | Type    | Description               |
+| --- | ----------- | ------- | ------------------------- |
+| 1   | Salary      | income  | Income from job           |
+| 2   | Groceries   | expense | Money spent on groceries  |
+| 3   | Rent        | expense | Monthly rent payment      |
+| 4   | Investments | income  | Income from investments   |
+| 5   | Utilities   | expense | Monthly utility bills     |
+| 32   | Dining Out  | expense | Money spent on dining out |
+| 33   | Freelance   | income  | Earnings from freelance   |
+
+
+> [!IMPORTANT]
+> CategoryId saab võtta eelmisest kategooriate peatükis olevast tabelist.
+
+#### Lisa sissetulek
+
+Method: `POST`, URL: `http://localhost:3000/incomes`
+
+```json
+{
+  "userId": 1,
+  "categoryId": 33,
+  "amount": 3000.00,
+  "transactionDate": "2024-01-15",
+  "description": "From freelance",
+  "type": "income"
+}
 ```
 
 ## Introduction 
