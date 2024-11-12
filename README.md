@@ -2,6 +2,26 @@
 
 # User Registration and Sign-In Application 
 
+- Klooni repositoorium
+
+```bash
+git clone https://github.com/yourusername/yourrepository.git
+```
+
+- Installi sõltuvused
+
+```bash
+npm install
+```
+
+- Lisa config.ts fail config.sample.ts asemel
+- Lisa mysql script queries.sql, dockerisse
+- Pane server käima
+
+```bash
+npm start
+```
+
 ## Introduction 
 Welcome to the User Registration and Sign-In Application! This project is a mobile-friendly web application designed for user registration and authentication. The application features a sleek, modern design with responsive layouts and a user-friendly interface. It allows users to register, sign in, and view a list of registered members, complete with unique user profiles. 
 
